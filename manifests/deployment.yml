@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: otpfdeveloperstestrepo 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: otpfdeveloperstestrepo
+  template:
+    metadata:
+      labels:
+        app: otpfdeveloperstestrepo 
+    spec:
+      containers:
+        - name: otpfdeveloperstestrepo 
+          image: otpfcontainerregistrydevtest.azurecr.io/otpfdeveloperstestrepo
+          ports:
+          - containerPort: 80
